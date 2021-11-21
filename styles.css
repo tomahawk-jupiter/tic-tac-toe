@@ -1,0 +1,32 @@
+* {
+  font-family: calibri, sans-serif;
+  /* border: solid; */
+}
+:root {
+  --board-length: 520px;
+  --tile-length: calc(500px / 3);
+  box-sizing: border-box;
+}
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: var(--board-length);
+  height: var(--board-length);
+  margin: auto;
+  background-color: black;
+}
+
+.game-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cccccc;
+  width: var(--tile-length);
+  height: var(--tile-length);
+  font-size: 100px;
+  font-weight: bolder;
+  border: solid;
+}
