@@ -1,37 +1,45 @@
 
-// game board obj MODULE (IIFE)
-// return different states for the board
-  //const gameArray = ['x', 'o', 'o', 'o', 'x', 'o', 'o', 'o', 'x'];
 const gameArray = ['.', '.', '.', '.', '.', '.', '.', '.', '.'];
 let playerOne = true;
 
-const winCheckArray = [
-  [0,1,2],[0,3,6],[3,4,5],
-  [6,7,8],[1,4,7],[2,4,6],
-  [2,5,8],[0,4,8]];
-// compare arrays and see if it contains all numbers of one of the winning arrays.
 const noughtsArray = [];
 const crossesArray = [];
 
+function winCheck(playerArray) {
+  const winArray = [
+    [0,1,2],[3,4,5],[6,7,8],
+    [0,3,6],[1,4,7],[2,5,8],
+    [0,4,8],[2,4,6]];
+console.log({playerArray})
+    winArray.map(set => {
+      const test = set.every(i => {
+        return playerArray.includes(i);
+      });
+      console.log({test});
+      // invoke game won
+      //gameWon();
+    });
+}
+
 function placeSymbol(e){
   let playerSymbol = playerOne ? 'o' : 'x';
-  let index = e.target.id;
-  if (playerOne) {
-    noughtsArray.push(index);
-  } else if (!playerOne) {
-    crossesArray.push(index);
-  }
+  let index = Number(e.target.id);
+
   // Don't allow placement on occupied tiles:
   if (gameArray[index] === '.') {
+    if (playerOne) {
+      noughtsArray.push(index);
+    } else if (!playerOne) {
+      crossesArray.push(index);
+    }
     gameArray.splice(index, 1, playerSymbol);
     playerOne = playerOne ? false : true;
     renderDisplay(gameArray);
+    winCheck(noughtsArray);
   }
-  console.log({crossesArray});
-  console.log({noughtsArray});
+  // IMPROVE - only start checking on round 3
 }
 
-// display controller MODULE (IIFE)
 const renderDisplay = (gameArray) => {
   const gameContainer = document.querySelector('.game-container');
   gameContainer.replaceChildren();
@@ -47,7 +55,3 @@ const renderDisplay = (gameArray) => {
 }
 
 renderDisplay(gameArray);
-
-// player obj FACTORY player(symbol)
-
-// game obj - controls game flow
