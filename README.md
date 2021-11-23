@@ -1,5 +1,6 @@
 # Tic Tac Toe game
 
+For practicing factory functions and module pattern.
 -----
 
 ### Useful things:
