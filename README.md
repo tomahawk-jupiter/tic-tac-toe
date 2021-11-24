@@ -1,7 +1,13 @@
 # Tic Tac Toe game
 
-For practicing factory functions and module pattern.
+For practicing factory functions and IIFE module pattern.
 -----
+
+### To Do:
+
+1. CSS styling.
+2. Add a play against computer option.
+3. [Minimax algrorithm](https://en.wikipedia.org/wiki/Minimax) for unbeatable computer player.
 
 ### Useful things:
 
