@@ -3,8 +3,8 @@
   /* border: solid; */
 }
 :root {
-  --board-length: 450px;
-  --tile-length: calc(430px / 3);
+  --board-length: 400px;
+  --tile-length: calc(380px / 3);
   box-sizing: border-box;
 }
 
@@ -23,6 +23,7 @@ body {
   height: var(--board-length);
   margin: auto;
   background-color: #aaa;
+  border: solid;
 }
 
 .game-tile {
@@ -38,10 +39,16 @@ body {
 }
 
 .game-finished-display {
-  background-color: #ddd;
   height: 40px;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.reset-btn, .form-btn {
+  background-color: black;
+  color: white;
 }
 
 .reset-btn {
-
+  margin: 15px 0;
 }
