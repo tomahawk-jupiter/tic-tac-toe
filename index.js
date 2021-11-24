@@ -15,6 +15,7 @@ const display = (() => {
         <input class="form-btn" type=button name="" value="Start Game">
       </form>
     `;
+    gameFinishedDisplay.innerHTML = '';
 
     const formBtn = gameContainer.querySelector('.form-btn');
     formBtn.addEventListener('click', (e)=> {
