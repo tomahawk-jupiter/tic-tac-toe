@@ -3,8 +3,8 @@
   /* border: solid; */
 }
 :root {
-  --board-length: 520px;
-  --tile-length: calc(500px / 3);
+  --board-length: 500px;
+  --tile-length: calc(480px / 3);
   box-sizing: border-box;
 }
 
@@ -16,7 +16,7 @@
   width: var(--board-length);
   height: var(--board-length);
   margin: auto;
-  background-color: black;
+  background-color: #aaa;
 }
 
 .game-tile {
