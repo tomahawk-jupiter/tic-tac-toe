@@ -30,3 +30,7 @@
   font-weight: bolder;
   border: solid;
 }
+
+.game-finished-display {
+  margin-left: 100px;
+}
