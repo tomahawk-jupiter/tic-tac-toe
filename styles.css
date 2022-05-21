@@ -1,14 +1,17 @@
 * {
-  font-family: calibri, sans-serif;
-  /* border: solid; */
+  font-family: calibri, arial, sans-serif;
 }
 :root {
   --board-length: 400px;
   --tile-length: calc(380px / 3);
-  box-sizing: border-box;
+  --btn-color: #353535;
+  --btn-hover-color: #222;
+  --btn-text-color: #fff;
+  --game-bg-color: #ccc;
 }
 
 body {
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,8 +24,7 @@ body {
   align-items: center;
   width: var(--board-length);
   height: var(--board-length);
-  margin: auto;
-  background-color: #aaa;
+  background-color: var(--game-bg-color);
   border: solid;
 }
 
@@ -30,12 +32,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #cccccc;
+  background-color: var(--game-bg-color);
   width: var(--tile-length);
   height: var(--tile-length);
   font-size: 100px;
   font-weight: bolder;
   border: solid;
+  cursor: pointer;
+  user-select: none;
 }
 
 .game-finished-display {
@@ -44,11 +48,42 @@ body {
   font-weight: bolder;
 }
 
-.reset-btn, .form-btn {
-  background-color: black;
-  color: white;
+.reset-btn,
+.form-btn {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.reset-btn:hover,
+.form-btn:hover {
+  background-color: var(--btn-hover-color);
 }
 
 .reset-btn {
   margin: 15px 0;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.name-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: gray;
+  border-radius: 8px;
+}
+
+input {
+  border: none;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+}
+
+input[type="text"] {
+  padding-left: 1rem;
+  border-radius: 8px;
 }
